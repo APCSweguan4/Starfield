@@ -52,7 +52,6 @@ class OddballParticle extends Particle
 {
   OddballParticle() {
     myColor = color(0, 0, 0, 100);
-    mySize = 20;
   }
   void move(){
     myX += Math.cos(myAngle) * mySpeed;
