@@ -100,4 +100,10 @@ class OddballParticle extends Particle
       rect((float)myX, (float)myY, (float)mySize / 2, (float)mySize / 2);
     }
   }
+  void enlarge(){
+    mySize += 1;  
+  }
+  void shrink() {
+    mySize -= 1;  
+  }
 }
