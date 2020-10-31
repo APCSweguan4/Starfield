@@ -50,7 +50,7 @@ class Particle
     mySize = 20.0;
     myX = myY = 350.0;
     myAngle = Math.random() * 2 * Math.PI;
-    mySpeed = Math.random() * 10 + 10;
+    mySpeed = Math.random() * 15 + 8;
   }
   void move(){
     myX += Math.cos(myAngle) * mySpeed;
@@ -60,7 +60,7 @@ class Particle
       returning = true;
     }
     if (dist((float)myX, (float)myY, 350, 350) < 10) {
-      mySpeed = Math.random() * 10 + 10;
+      mySpeed = Math.random() * 15 + 8;
       returning = false;
     }
   }
