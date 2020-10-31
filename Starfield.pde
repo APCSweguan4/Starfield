@@ -1,17 +1,22 @@
-Particle[] parts = new Particle[200];
+Particle[] parts = new Particle[100];
+boolean spacePressed = false;
 void setup()
 {
+  smooth();
   size(700, 700);
   for(int i = 0; i < parts.length; i++){
-    parts[i] = new Particle();  
+    parts[i] = new Particle();
   }
-  for(int i = 0; i < parts.length / 2; i++){
-    parts[i] = new OddballParticle();
+  for(int i = 0; i < 5; i++){
+    parts[i] = new OddballParticle();  
   }
+  background(55);
 }
 void draw()
 {
-  background(55);
+  if (spacePressed == false) {
+    background(55);  
+  }
   for(int i = 0; i < parts.length; i++) {
     parts[i].move();
     parts[i].show();  
@@ -22,13 +27,26 @@ void draw()
     }
   }
 }
+
+void keyPressed() {
+  if (key == ' ') {
+    spacePressed = true;  
+  }
+}
+
+void keyReleased() {
+  if (key == ' ' && spacePressed == true) {
+    spacePressed = false;
+  }
+}
+
 class Particle
 {
   double myX, myY, myAngle, mySpeed, mySize;
   int myColor;
   boolean returning = false;
   Particle() {
-    myColor = color(255, 255, 255, 100);
+    myColor = color(255, 255, 255, 50);
     mySize = 20.0;
     myX = myY = 350.0;
     myAngle = Math.random() * 2 * Math.PI;
@@ -76,8 +94,10 @@ class OddballParticle extends Particle
     }
   }
   void show() {
-    stroke(0, 0, 0);
-    fill(myColor);
-    rect((float)myX, (float)myY, (float)mySize / 2, (float)mySize / 2);
+    if (spacePressed == false) {
+      stroke(0, 0, 0);
+      fill(myColor);
+      rect((float)myX, (float)myY, (float)mySize / 2, (float)mySize / 2);
+    }
   }
 }
