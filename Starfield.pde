@@ -81,6 +81,7 @@ class Particle
 class OddballParticle extends Particle
 {
   OddballParticle() {
+    returning = false;
     myColor = color(110, 110, 110, 200);
     mySize = 20.0;
     myX = myY = 350.0;
