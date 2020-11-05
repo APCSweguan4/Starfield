@@ -81,6 +81,10 @@ class OddballParticle extends Particle
 {
   OddballParticle() {
     myColor = color(110, 110, 110, 200);
+    mySize = 20.0;
+    myX = myY = 350.0;
+    myAngle = Math.random() * 2 * Math.PI;
+    mySpeed = Math.random() * 5 + 1;
   }
   void move(){
     myX += Math.cos(myAngle) * mySpeed;
