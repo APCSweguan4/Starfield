@@ -44,8 +44,9 @@ class Particle
 {
   double myX, myY, myAngle, mySpeed, mySize;
   int myColor;
-  boolean returning = false;
+  boolean returning;
   Particle() {
+    returning = false;
     myColor = color(255, 255, 255, 50);
     mySize = 20.0;
     myX = myY = 350.0;
